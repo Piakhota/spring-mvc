@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table border="1">
+    <tr th:style="'font-weight: bold'">
+        <td>Марка</td>
+        <td>Модель</td>
+        <td>Год</td>
+    </tr>
+    <tr th:each="car : ${cars}"
+        th:unless="${carStat.index > 10}">
+        <td th:text="${car.make}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.year}"></td>
+    </tr>
+</table>
+</body>
+</html>
